@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import Hero from "@/components/sections/Hero";
+import ServicesMarquee from "@/components/sections/ServicesMarquee";
 import StatsBar from "@/components/sections/StatsBar";
 import DepartmentsGrid from "@/components/sections/DepartmentsGrid";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
@@ -32,6 +33,7 @@ export default function HomePage() {
       
       <main>
         <Hero onBookAppointment={openModal} />
+        <ServicesMarquee />
         <StatsBar />
         <DepartmentsGrid />
         <WhyChooseUs />
