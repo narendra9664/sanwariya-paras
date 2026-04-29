@@ -14,20 +14,42 @@
   --color-accent: #0F7B5F;          /* Same as primary — single-brand feel */
   --color-accent-light: #12A07A;
   --color-accent-dark: #0A5C47;
-  --color-warm-bg: #F7FAF9;         /* Very subtle teal-tinted off-white */
-  --color-text: #1B1F23;            /* Near-black for body copy */
   --color-cta: #E54D2E;             /* Warm red for urgency (emergency) */
   --color-cta-dark: #C53D22;
-  --color-muted: #6B7280;           /* Gray-500 for secondary text */
-  --color-surface: #FFFFFF;         /* Pure white surfaces */
-  --color-border: #E5E7EB;          /* Light gray borders */
-  --color-hero-bg: #FAFBFA;         /* Near-white hero background */
+  --color-muted: var(--theme-muted);
+  
+  /* Dynamic Theme Colors */
+  --color-warm-bg: var(--theme-warm-bg);
+  --color-text: var(--theme-text);
+  --color-surface: var(--theme-surface);
+  --color-border: var(--theme-border);
+  --color-hero-bg: var(--theme-hero-bg);
 
   /* Font Families */
   --font-playfair: var(--font-family-playfair), Georgia, serif;
   --font-dm-sans: var(--font-family-dm-sans), system-ui, sans-serif;
   --font-jetbrains: var(--font-family-jetbrains), 'Courier New', monospace;
   --font-hind: var(--font-family-hind), sans-serif;
+}
+
+@layer base {
+  :root {
+    --theme-text: #1B1F23;
+    --theme-surface: #FFFFFF;
+    --theme-warm-bg: #F7FAF9;
+    --theme-border: #E5E7EB;
+    --theme-hero-bg: #FAFBFA;
+    --theme-muted: #6B7280;
+  }
+  
+  .dark {
+    --theme-text: #F3F4F6;
+    --theme-surface: #0F1115; /* Dark background */
+    --theme-warm-bg: #16191D; /* Slightly lighter dark background */
+    --theme-border: #2D3748;
+    --theme-hero-bg: #121418;
+    --theme-muted: #9CA3AF;
+  }
 }
 
 /* ============================================
@@ -181,4 +203,13 @@ body {
 
 .will-animate {
   will-change: transform, opacity;
+}
+
+@keyframes ecg-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

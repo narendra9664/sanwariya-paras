@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { HOSPITAL } from "@/data/hospital";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 /**
  * NAVBAR
@@ -88,7 +89,7 @@ export default function Navbar({ onBookAppointment }: { onBookAppointment?: () =
               ))}
             </div>
 
-            {/* Right Section: Emergency + CTA */}
+            {/* Right Section: Emergency + CTA + Theme */}
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href={`tel:${HOSPITAL.phone.emergency}`}
@@ -97,6 +98,7 @@ export default function Navbar({ onBookAppointment }: { onBookAppointment?: () =
                 <Phone className="w-4 h-4 animate-pulse-slow" />
                 {HOSPITAL.phone.emergency}
               </a>
+              <ThemeToggle />
               <button
                 onClick={onBookAppointment}
                 className="bg-accent hover:bg-accent-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:shadow-lg hover:shadow-accent/25 active:scale-95"
@@ -105,7 +107,7 @@ export default function Navbar({ onBookAppointment }: { onBookAppointment?: () =
               </button>
             </div>
 
-            {/* Mobile: Emergency + Hamburger */}
+            {/* Mobile: Emergency + Theme + Hamburger */}
             <div className="flex lg:hidden items-center gap-3">
               <a
                 href={`tel:${HOSPITAL.phone.emergency}`}
@@ -114,6 +116,7 @@ export default function Navbar({ onBookAppointment }: { onBookAppointment?: () =
                 <Phone className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">{HOSPITAL.phone.emergency}</span>
               </a>
+              <ThemeToggle />
               <button
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
                 className={cn(

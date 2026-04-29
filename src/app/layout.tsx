@@ -74,6 +74,7 @@ export const metadata: Metadata = {
 };
 
 import ChatWidget from "@/components/ui/ChatWidget";
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
 
 export default function RootLayout({
   children,
@@ -84,10 +85,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${playfair.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${hind.variable}`}
+      suppressHydrationWarning
     >
-      <body className="font-body antialiased">
-        {children}
-        <ChatWidget />
+      <body className="font-body antialiased transition-colors duration-500">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
+          {children}
+          <ChatWidget />
+        </ThemeProvider>
       </body>
     </html>
   );
