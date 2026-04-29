@@ -114,16 +114,21 @@ export default function Hero({ onBookAppointment }: { onBookAppointment?: () => 
                 <div className="w-[360px] h-[360px] rounded-full bg-primary/8" />
               </div>
 
-              {/* Doctor placeholder */}
-              <div className="absolute inset-0 flex items-end justify-center">
-                <div className="relative w-[300px] h-[420px] flex items-end justify-center">
-                  {/* Placeholder doctor silhouette */}
-                  <div className="w-full h-full bg-gradient-to-t from-primary/10 to-primary/3 rounded-t-[160px] flex flex-col items-center justify-center">
-                    <div className="w-20 h-20 bg-primary/15 rounded-full flex items-center justify-center mb-4">
-                      <Stethoscope className="w-10 h-10 text-primary/50" />
-                    </div>
-                    <p className="text-primary/60 font-display text-lg font-semibold">Dr. Anurag Jain</p>
-                    <p className="text-primary/40 text-xs mt-1">DM Cardiology, CMC Vellore</p>
+              {/* Doctor Image */}
+              <div className="absolute inset-0 flex items-end justify-center z-10">
+                <div className="relative w-[340px] h-[460px] flex items-end justify-center">
+                  <Image
+                    src="/images/dr-anurag-jain.png" // User must place the image here
+                    alt="Dr. Anurag Jain - Leading Cardiologist"
+                    fill
+                    className="object-contain object-bottom drop-shadow-2xl"
+                    priority
+                  />
+                  
+                  {/* Name Tag */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-xl border border-white/20 text-center whitespace-nowrap hidden lg:block">
+                    <p className="text-primary font-display text-lg font-bold">Dr. Anurag Jain</p>
+                    <p className="text-accent text-xs font-semibold mt-0.5">DM Cardiology, CMC Vellore</p>
                   </div>
                 </div>
               </div>
